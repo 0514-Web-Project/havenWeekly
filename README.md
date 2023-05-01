@@ -26,7 +26,7 @@
 ### Requirements
 For building and running the application you need:
 
-- [Node.js 14.19.3](https://nodejs.org/ca/blog/release/v14.19.3/)
+- [Node.js 19.3.0](https://nodejs.org/ca/blog/release/v19.3.0/)
 - [Npm 9.2.0](https://www.npmjs.com/package/npm/v/9.2.0)
 
 ### Installation
@@ -41,7 +41,7 @@ $ cd havenWeekly
 #### Frontend
 ```
 $ cd havenWeekly
-$ nvm use v.14.19.3
+$ nvm use v.19.3.0
 $ yarn install 
 $ yarn start
 ```
