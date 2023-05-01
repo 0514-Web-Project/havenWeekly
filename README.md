@@ -43,7 +43,7 @@ $ cd havenWeekly
 $ cd havenWeekly
 $ nvm use v.19.3.0
 $ yarn install 
-$ yarn start
+$ yarn dev
 ```
 
 ---
