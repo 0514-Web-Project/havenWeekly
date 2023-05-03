@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Map, Monster
 
-from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('헤이븐 주간 퀘스트 가이드')
+    map_list = Map.objects.order_by('name')
+    context = {'map_list': map_list}
+    return render(request, 'haven/map_list.html', context)
 
-# Create your views here.
+
+def detail(request, map_id):
+    map = get_object_or_404(Map, pk=map_id)
+    monsters = map.monsters.all()
+    context = {'map': map, 'monsters': monsters}
+    return render(request, 'haven/map_detail.html', context)

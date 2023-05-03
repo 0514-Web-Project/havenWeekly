@@ -1,0 +1,9 @@
+{% if map_list %}
+    <ul>
+        {% for map in map_list %}
+            <li><a href="{% url 'haven:detail' map.id %}">{{ map.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>맵 없음.</p>
+{% endif %}

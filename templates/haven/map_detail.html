@@ -1,0 +1,12 @@
+<h1>{{ map.id }} : {{ map.name }}</h1>
+{% if monsters %}
+    <ul>
+        {% for monster in monsters %}
+            <li>
+                <p>{{monster.id}} {{monster.name}} {{monster.level}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>몬스터 없음.</p>
+{% endif %}
