@@ -1,5 +1,7 @@
 import { QuestDummy, QuestType } from "@/data/QuestDummy";
+import MyListState from "@/recoil/MyListState";
 import React from "react";
+import { useRecoilState } from "recoil";
 
 const SearchList = () => {
   return (
@@ -15,8 +17,21 @@ export default SearchList;
 
 const SearchItem = ({ item }: { item: QuestType }) => {
   const { name, difficulty } = item;
+  const [myList, setMyList] = useRecoilState(MyListState);
+
   return (
-    <div className="flex cursor-pointer justify-between mx-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff">
+    <div
+      onClick={() => {
+        if (
+          myList.findIndex((item: QuestType) => {
+            return item.name === name;
+          }) >= 0
+        )
+          return;
+        setMyList(myList.concat({ name, difficulty }));
+      }}
+      className="flex cursor-pointer justify-between mx-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff"
+    >
       <div>{name}</div>
       <div className="flex">
         {difficulty}
