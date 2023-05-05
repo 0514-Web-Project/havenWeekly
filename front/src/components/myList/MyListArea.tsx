@@ -1,10 +1,10 @@
 import MyListState from "@/recoil/MyListState";
 import React from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import MyList from "./MyList";
 
 export default function MyListArea() {
-  const setMyList = useSetRecoilState(MyListState);
+  const [myList, setMyList] = useRecoilState(MyListState);
 
   return (
     <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%]">
@@ -20,7 +20,7 @@ export default function MyListArea() {
             RESET
           </button>
         </div>
-        <div className="text-[16px] p-[10px]">2/4</div>
+        <div className="text-[16px] p-[10px]">{myList.length}/4</div>
       </div>
       <MyList />
     </div>
