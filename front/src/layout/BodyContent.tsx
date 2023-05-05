@@ -1,14 +1,18 @@
 import Analytics from "@/components/analytics/Analytics";
 import HavenMap from "@/components/havenMap/HavenMap";
-import MyList from "@/components/myList/MyList";
+import MyListArea from "@/components/myList/MyListArea";
 import { SearchArea } from "@/components/search";
-import React from "react";
+import React, { useState } from "react";
 
 export default function BodyContent() {
+  const [myQuestList, setMyQuestList] = useState([]);
+
   return (
     <div className="bg-dark w-[906px] h-[1058px] rounded-[18px] mt-[26px] p-[34px_49px]">
-      <SearchArea />
-      <MyList />
+      <div className="flex justify-between">
+        <SearchArea />
+        <MyListArea />
+      </div>
       <Analytics />
       {/* <HavenMap /> */}
     </div>

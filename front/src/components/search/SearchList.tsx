@@ -1,11 +1,10 @@
-import { QuestDummy } from "@/data/QuestDummy";
+import { QuestDummy, QuestType } from "@/data/QuestDummy";
 import React from "react";
 
 const SearchList = () => {
-  console.log(QuestDummy);
   return (
     <div className="">
-      {QuestDummy.map((item: any, index: number) => {
+      {QuestDummy.map((item: QuestType, index: number) => {
         return <SearchItem key={index} item={item} />;
       })}
     </div>
@@ -14,10 +13,10 @@ const SearchList = () => {
 
 export default SearchList;
 
-const SearchItem = (item: any) => {
-  const { name, difficulty } = item.item;
+const SearchItem = ({ item }: { item: QuestType }) => {
+  const { name, difficulty } = item;
   return (
-    <div className="flex justify-between mx-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff">
+    <div className="flex cursor-pointer justify-between mx-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff">
       <div>{name}</div>
       <div className="flex">
         {difficulty}
