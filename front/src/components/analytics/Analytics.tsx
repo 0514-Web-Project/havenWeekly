@@ -1,9 +1,6 @@
-import MyListState from "@/recoil/MyListState";
 import React from "react";
-import { useRecoilValue } from "recoil";
 
 export default function Analytics({ analytics }: { analytics: string | null }) {
-  const myListState = useRecoilValue(MyListState);
   return (
     <div className="border border-solid border-[#fff] rounded-[12px] p-[18px_22px] mt-[14px]">
       <div>분석</div>

@@ -1,5 +1,5 @@
 import MyListState from "@/recoil/MyListState";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import MyList from "./MyList";
 
@@ -16,7 +16,7 @@ export default function MyListArea({
     if (myList.length < 4) setAnalytics(null);
   }, [myList]);
 
-  const handleApply = () => {
+  const handleApply = useCallback(() => {
     setAnalytics(
       `- 난이도 : 평균 ${
         myList
@@ -27,7 +27,7 @@ export default function MyListArea({
           ) / 4
       }`
     );
-  };
+  }, [myList]);
 
   return (
     <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%]">
