@@ -2,12 +2,12 @@ import { QuestType } from "@/data/QuestDummy";
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
-const localStorage =
-  typeof window !== "undefined" ? window.localStorage : undefined;
+const sessionStorage =
+  typeof window !== "undefined" ? window.sessionStorage : undefined;
 
 const { persistAtom } = recoilPersist({
   key: "MyListStatePersist",
-  storage: localStorage,
+  storage: sessionStorage,
 });
 
 const MyListState = atom<QuestType[]>({
