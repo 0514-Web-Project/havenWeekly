@@ -1,6 +1,6 @@
 import { QuestDummy, QuestType } from "@/data/QuestDummy";
 import MyListState from "@/recoil/MyListState";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
 const SearchList = () => {
@@ -18,17 +18,18 @@ export default SearchList;
 const SearchItem = ({ item }: { item: QuestType }) => {
   const { name, difficulty } = item;
   const [myList, setMyList] = useRecoilState(MyListState);
+  const [isAlreadyAdd, setIsAlreadyAdd] = useState(false);
 
-  const isAlreadyAdd = () => {
-    return (
+  useEffect(() => {
+    setIsAlreadyAdd(
       myList.findIndex((item: QuestType) => {
         return item.name === name;
       }) >= 0
     );
-  };
+  }, [myList]);
 
   const clickSearchItem = () => {
-    if (isAlreadyAdd() || myList.length === 4) return;
+    if (isAlreadyAdd || myList.length === 4) return;
     setMyList(myList.concat({ name, difficulty }));
   };
 
@@ -39,7 +40,7 @@ const SearchItem = ({ item }: { item: QuestType }) => {
     >
       <div className="flex gap-x-[10px]">
         <div>{name}</div>
-        {isAlreadyAdd() && <div className="text-[#81AF9E]">추가완료</div>}
+        {isAlreadyAdd && <div className="text-[#81AF9E]">추가완료</div>}
       </div>
       <div className="flex">
         {difficulty}
