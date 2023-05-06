@@ -14,13 +14,30 @@ const SearchInput = ({ searchKeyword, setSearchKeyword }: Props) => {
         className="w-[18px] h-[19px]"
       />
       <input
+        id="search_input"
         placeholder="퀘스트 검색"
-        className="bg-transparent focus:outline-0"
+        className="bg-transparent focus:outline-0 w-full"
         value={searchKeyword}
         onChange={(e) => {
           setSearchKeyword(e.target.value);
         }}
       />
+      {searchKeyword.length > 0 && (
+        <div
+          className="cursor-pointer"
+          onClick={() => {
+            setSearchKeyword("");
+            const inputElement = document.getElementById("search_input");
+            inputElement?.focus();
+          }}
+        >
+          <img
+            className="h-[16px]"
+            src="/images/icon_cancel.svg"
+            alt="search_cancel"
+          />
+        </div>
+      )}
     </div>
   );
 };
