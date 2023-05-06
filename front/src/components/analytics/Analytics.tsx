@@ -1,5 +1,12 @@
 import React from "react";
 
 export default function Analytics() {
-  return <div>Analytics</div>;
+  return (
+    <div className="border border-solid border-[#fff] rounded-[12px] p-[18px_22px] mt-[14px]">
+      <div>분석</div>
+      <div className="text-[13px] my-[5px]">
+        APPLY 버튼을 누르면 분석 결과가 출력됩니다.
+      </div>
+    </div>
+  );
 }

@@ -14,7 +14,7 @@ export default function BodyContent() {
         <MyListArea />
       </div>
       <Analytics />
-      {/* <HavenMap /> */}
+      <HavenMap />
     </div>
   );
 }
