@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 
 const SearchList = () => {
   return (
-    <div className="">
+    <div className="overflow-y-scroll h-[181px]">
       {QuestDummy.map((item: QuestType, index: number) => {
         return <SearchItem key={index} item={item} />;
       })}
@@ -19,20 +19,28 @@ const SearchItem = ({ item }: { item: QuestType }) => {
   const { name, difficulty } = item;
   const [myList, setMyList] = useRecoilState(MyListState);
 
+  const isAlreadyAdd = () => {
+    return (
+      myList.findIndex((item: QuestType) => {
+        return item.name === name;
+      }) >= 0
+    );
+  };
+
+  const clickSearchItem = () => {
+    if (isAlreadyAdd() || myList.length === 4) return;
+    setMyList(myList.concat({ name, difficulty }));
+  };
+
   return (
     <div
-      onClick={() => {
-        if (
-          myList.findIndex((item: QuestType) => {
-            return item.name === name;
-          }) >= 0
-        )
-          return;
-        setMyList(myList.concat({ name, difficulty }));
-      }}
+      onClick={clickSearchItem}
       className="hover:bg-[#ffffff10] duration-300 flex cursor-pointer justify-between px-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff"
     >
-      <div>{name}</div>
+      <div className="flex gap-x-[10px]">
+        <div>{name}</div>
+        {isAlreadyAdd() && <div className="text-[#81AF9E]">추가완료</div>}
+      </div>
       <div className="flex">
         {difficulty}
         <img

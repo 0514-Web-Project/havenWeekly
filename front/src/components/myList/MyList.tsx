@@ -12,7 +12,7 @@ export default function MyList() {
   }, [myList]);
 
   return (
-    <div>
+    <div className="overflow-y-scroll h-[181px]">
       {list.map((item: QuestType, index: number) => {
         return <MyListItem item={item} key={index} index={index} />;
       })}
