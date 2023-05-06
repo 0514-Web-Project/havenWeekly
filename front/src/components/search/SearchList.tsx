@@ -30,7 +30,7 @@ const SearchItem = ({ item }: { item: QuestType }) => {
           return;
         setMyList(myList.concat({ name, difficulty }));
       }}
-      className="flex cursor-pointer justify-between mx-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff"
+      className="hover:bg-[#ffffff10] duration-300 flex cursor-pointer justify-between px-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff"
     >
       <div>{name}</div>
       <div className="flex">
