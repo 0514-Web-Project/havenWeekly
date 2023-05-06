@@ -95,7 +95,7 @@ const SearchInput = (props: Props) => {
       />
       <input
         id="search_input"
-        placeholder="퀘스트 검색 (예. 적로봇처치, ㅈㄹㅂㅊㅊ)"
+        placeholder="퀘스트 검색 (ex. 적로봇처치, ㅈㄹㅂㅊㅊ)"
         className="bg-transparent focus:outline-0 w-full"
         value={searchKeyword}
         onChange={(e) => {
