@@ -5,15 +5,15 @@ import { SearchArea } from "@/components/search";
 import React, { useState } from "react";
 
 export default function BodyContent() {
-  const [myQuestList, setMyQuestList] = useState([]);
+  const [analytics, setAnalytics] = useState<string | null>(null);
 
   return (
     <div className="bg-dark w-[906px] h-[1058px] rounded-[18px] mt-[26px] p-[34px_49px]">
       <div className="flex justify-between">
         <SearchArea />
-        <MyListArea />
+        <MyListArea setAnalytics={setAnalytics} />
       </div>
-      <Analytics />
+      <Analytics analytics={analytics} />
       <HavenMap />
     </div>
   );
