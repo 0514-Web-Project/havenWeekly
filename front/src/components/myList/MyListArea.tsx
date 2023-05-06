@@ -15,12 +15,16 @@ export default function MyListArea() {
     <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%]">
       <div className="flex justify-between mb-[6px]">
         <div className="gap-x-[8px] flex">
-          <button className="hover:bg-[#81af9e50] duration-300 border-[#81AF9E] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px]">
+          <button
+            disabled={myQuestLength < 4}
+            className="disabled:border-[#ddd] disabled:bg-[#393f3d50] disabled:text-[#ffffff62] hover:bg-[#81af9e50] duration-300 border-[#81AF9E] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px]"
+          >
             APPLY
           </button>
           <button
+            disabled={myQuestLength === 0}
             onClick={() => setMyList([])}
-            className="hover:bg-[#FFB2B250] duration-300 border-[#FFB2B2] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px]"
+            className="disabled:border-[#ddd] disabled:bg-[#393f3d50] disabled:text-[#ffffff62] hover:bg-[#FFB2B250] duration-300 border-[#FFB2B2] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px]"
           >
             RESET
           </button>
