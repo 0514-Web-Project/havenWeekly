@@ -3,11 +3,15 @@ import MyListState from "@/recoil/MyListState";
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
-const SearchList = () => {
+const SearchList = ({
+  searchResultList,
+}: {
+  searchResultList: QuestType[];
+}) => {
   return (
     <div className="overflow-y-scroll h-[181px]">
-      {QuestDummy.map((item: QuestType, index: number) => {
-        return <SearchItem key={index} item={item} />;
+      {searchResultList.map((item: QuestType, index: number) => {
+        return <SearchItem key={`${item.name}-${index}`} item={item} />;
       })}
     </div>
   );
