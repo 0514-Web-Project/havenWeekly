@@ -12,7 +12,7 @@
 
 ## 2. Members
 
-|      Yerim       |          Hyeonjun         |                                                                                                                   
+|      Yerim (FE)      |          Hyeonjun (BE)        |                                                                                                                   
 | :------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------: | 
 |   <img width="160px" src="https://user-images.githubusercontent.com/58348662/235418451-0e2574db-7b7b-459c-abcc-16829654f642.png" />    |                    <img width="160px" src="https://user-images.githubusercontent.com/58348662/235418373-d13aa350-c7bf-487c-b47e-776d860786e9.png" />    |
 |   [@yeeeerim](https://github.com/yeeeerim)   |    [@HyeonjunOh](https://github.com/HyeonjunOh)  |
@@ -21,7 +21,7 @@
 
 > 
 
-## 4. Get Started
+## 4. Getting Started
 
 ### Requirements
 For building and running the application you need:
