@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="mt-[60px]">
+    <div className="py-[40px] mt-[30px] w-full text-center border-t-[1px] border-solid border-[#fff]">
       <div className="flex gap-x-[32px] justify-center">
         <img
           className="cursor-pointer"
