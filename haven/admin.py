@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Map, Monster
+from .models import Map, Monster, Item, QuestDetail, Quest
 
 # Register your models here.
 
 
-class MapAdmin(admin.ModelAdmin):
+@admin.register(Map, Monster, Item, Quest, QuestDetail)
+class MyAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
-admin.site.register(Map, MapAdmin)

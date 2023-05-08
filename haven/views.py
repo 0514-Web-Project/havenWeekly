@@ -1,5 +1,18 @@
 from django.shortcuts import render, get_object_or_404
+from .serializers import MapSerializer, MonsterSerializer
 from .models import Map, Monster
+from rest_framework import viewsets, permissions
+
+class MapViewSet(viewsets.ModelViewSet):
+    queryset = Map.objects.all().order_by('name')
+    serializer_class = MapSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class MonsterViewSet(viewsets.ModelViewSet):
+    queryset = Monster.objects.all().order_by('name')
+    serializer_class = MonsterSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
 
 
 def index(request):
