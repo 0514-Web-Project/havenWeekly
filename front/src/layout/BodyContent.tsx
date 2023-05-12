@@ -8,7 +8,7 @@ export default function BodyContent() {
   const [analytics, setAnalytics] = useState<string | null>(null);
 
   return (
-    <div className="bg-dark w-[906px] h-[1058px] rounded-[18px] mt-[26px] p-[34px_49px]">
+    <div className="bg-dark w-[906px] h-[1058px] rounded-[18px] mt-[26px] p-[34px_49px] cs:rounded-[0px]">
       <div className="flex justify-between">
         <SearchArea />
         <MyListArea setAnalytics={setAnalytics} />
