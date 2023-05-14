@@ -26,7 +26,9 @@ const MyListItem = ({ item, index }: { item: QuestType; index: number }) => {
 
   return (
     <div className="flex justify-between px-[12px] py-[16px] text-[13px] border border-solid border-[#fff rounded-[12px] mb-[8px]">
-      <div>{`${index + 1}. ${name}`}</div>
+      <div className="whitespace-nowrap text-ellipsis overflow-hidden">{`${
+        index + 1
+      }. ${name}`}</div>
       <div className="flex">
         {difficulty}
         <img

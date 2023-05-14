@@ -8,7 +8,7 @@ const SearchArea = () => {
   const [searchResultList, setSearchResultList] = useState<QuestType[]>([]);
 
   return (
-    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%]">
+    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%] sm:w-full">
       <SearchInput
         searchKeyword={searchKeyword}
         setSearchKeyword={setSearchKeyword}

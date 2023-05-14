@@ -30,7 +30,7 @@ export default function MyListArea({
   }, [myList]);
 
   return (
-    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%]">
+    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%] sm:w-full">
       <div className="flex justify-between mb-[6px]">
         <div className="gap-x-[8px] flex">
           <button

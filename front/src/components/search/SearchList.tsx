@@ -42,10 +42,13 @@ const SearchItem = ({ item }: { item: QuestType }) => {
       onClick={clickSearchItem}
       className="hover:bg-[#ffffff10] duration-300 flex cursor-pointer justify-between px-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff"
     >
-      <div className="flex gap-x-[10px]">
-        <div>{name}</div>
-        {isAlreadyAdd && <div className="text-[#81AF9E]">추가완료</div>}
+      <div className="overflow-hidden text-ellipsis whitespace-nowrap">
+        {name}{" "}
+        {isAlreadyAdd && (
+          <span className="ml-[10px] text-[#81AF9E] ">추가완료</span>
+        )}
       </div>
+
       <div className="flex">
         {difficulty}
         <img

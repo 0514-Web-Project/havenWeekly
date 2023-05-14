@@ -22,8 +22,12 @@ export default function Footer() {
         </a>
       </div>
       <div className="mt-[14px]">
-        2023 © havenWeekly All rights reserved. havenWeekly is not associated
-        with NEXON Korea.
+        <div className="inline-block">
+          2023 © havenWeekly All rights reserved.
+        </div>{" "}
+        <div className="inline-block">
+          havenWeekly is not associated with NEXON Korea.
+        </div>
       </div>
     </div>
   );
