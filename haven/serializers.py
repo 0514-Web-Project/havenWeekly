@@ -1,8 +1,9 @@
 from rest_framework import serializers
-from .models import Map, Monster
+from .models import Map, Monster, Item, Quest, QuestDetail
 
 
 class MonsterSerializer(serializers.ModelSerializer):
+    img = serializers.ImageField(use_url=True)
 
     class Meta:
         model = Monster

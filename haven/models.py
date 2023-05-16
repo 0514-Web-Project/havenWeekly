@@ -4,7 +4,7 @@ from django.db import models
 class Monster(models.Model):
     name = models.CharField('몬스터 이름', max_length=50)
     level = models.IntegerField('몬스터 레벨')
-    img = models.ImageField('몬스터 이미지', blank=True, null=True)
+    img = models.ImageField('몬스터 이미지', blank=True, null=True, upload_to='monsters')
 
     class Meta:
         verbose_name = '몬스터'
@@ -17,7 +17,7 @@ class Monster(models.Model):
 
 class Map(models.Model):
     name = models.CharField('맵 이름', max_length=50)
-    monsters = models.ManyToManyField('Monster', related_name='maps')
+    monsters = models.ManyToManyField('Monster', blank=True, related_name='maps')
 
     class Meta:
         verbose_name = '맵'
@@ -30,7 +30,7 @@ class Map(models.Model):
 
 class Item(models.Model):
     name = models.CharField('아이템 이름', max_length=50)
-    img = models.ImageField('아이템 이미지', blank=True, null=True)
+    img = models.ImageField('아이템 이미지', blank=True, null=True, upload_to='items')
 
     class Meta:
         verbose_name = '아이템'

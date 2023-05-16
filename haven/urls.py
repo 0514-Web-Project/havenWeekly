@@ -8,6 +8,7 @@ app_name = 'haven'
 
 router = routers.DefaultRouter()
 router.register('maps', MapViewSet)
+router.register('monsters', MonsterViewSet)
 
 map_list = MapViewSet.as_view({
     'post': 'create',
@@ -26,7 +27,6 @@ urlpatterns = [
     path('auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('maps/', map_list, name='map_list'),
     path('maps/<int:pk>/', map_detail, name='map_detail'),
-    path('', views.index, name='index'),
-    path('<int:map_id>/', views.detail, name='detail'),
-
+    path('monters/', map_list, name='map_list'),
+    path('monsters/<int:pk>/', map_detail, name='map_detail'),
 ]
