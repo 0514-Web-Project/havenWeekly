@@ -42,9 +42,10 @@ class Item(models.Model):
 
 
 class QuestDetail(models.Model):
+    name = models.CharField('이름', max_length=50, null=True)
     monster = models.ForeignKey(Monster, on_delete=models.SET_NULL, null=True, related_name='questdetail')
-    item = models.ForeignKey(Item, on_delete=models.SET_NULL, null=True, related_name='questdetail')
-    quest_type = models.BooleanField('퀘스트 타입')
+    item = models.ForeignKey(Item, on_delete=models.SET_NULL, blank=True, null=True, related_name='questdetail')
+    quest_type = models.BooleanField('수집 퀘스트')
     amount = models.IntegerField('요구량')
 
     class Meta:
@@ -53,7 +54,7 @@ class QuestDetail(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return self.monster.name
+        return self.name
 
 
 class Quest(models.Model):
