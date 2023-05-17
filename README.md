@@ -35,7 +35,27 @@ $ git clone https://github.com/0514-Web-Project/havenWeekly.git
 $ cd havenWeekly
 ```
 #### Backend
+First, move to the directory that you want to set up virtual environment
+
+For Windows : 
 ```
+> python -m venv hw
+> hw/scripts/activate
+
+> cd havenWeekly
+> pip install -r requirements.txt
+> python manage.py runserver
+```
+
+For Mac :
+```
+% python3 -m venv hw
+% cd hw/bin
+% source activate
+
+% cd havenWeekly
+% pip install -r requirements.txt
+% python3 manage.py runserver
 ```
 
 #### Frontend
