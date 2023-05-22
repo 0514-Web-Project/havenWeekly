@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.apps import apps
 from django.utils.safestring import mark_safe
-from .models import Map, Monster, Item, Quest, QuestDetail
+from .models import Map, Monster, Item, Quest, QuestDetail, NPC
 
 # Register your models here.
 
@@ -20,7 +20,7 @@ class MonsterAdmin(admin.ModelAdmin):
 admin.site.register(Monster, MonsterAdmin)
 
 
-@admin.register(Map, Item, Quest, QuestDetail)
+@admin.register(Map, Item, Quest, QuestDetail, NPC)
 class MyAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
