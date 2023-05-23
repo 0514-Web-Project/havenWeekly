@@ -3,3 +3,7 @@ export interface QuestType {
   difficulty: number;
 }
 
+export interface CallbackType {
+  onSuccess: (res: any) => void;
+  onFail: (err: Error) => void;
+}
