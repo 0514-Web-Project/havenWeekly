@@ -63,7 +63,7 @@ For Mac :
 $ cd havenWeekly
 $ nvm use v.19.3.0
 $ yarn install 
-$ yarn dev
+$ yarn dev:local // local development env
 ```
 
 ---
