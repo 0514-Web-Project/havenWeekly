@@ -5,6 +5,7 @@
   "proxy": "http://127.0.0.1:8000/",
   "scripts": {
     "dev": "next dev",
+    "dev:local": "env-cmd -f .env.local next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,6 +20,7 @@
     "@types/react-dom": "18.2.1",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
+    "env-cmd": "^10.1.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.2",
     "next": "13.3.2",

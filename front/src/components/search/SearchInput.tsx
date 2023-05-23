@@ -1,14 +1,18 @@
-import { QuestDummy, QuestType } from "@/data/QuestDummy";
-import React, { useCallback, useEffect } from "react";
+import { QuestType } from "@/data/type";
+import React, { useCallback, useEffect, useState } from "react";
 
 type Props = {
-  searchKeyword: string;
-  setSearchKeyword: React.Dispatch<React.SetStateAction<string>>;
+  questList: QuestType[];
   setSearchResultList: React.Dispatch<React.SetStateAction<QuestType[]>>;
 };
 
 const SearchInput = (props: Props) => {
-  const { searchKeyword, setSearchKeyword, setSearchResultList } = props;
+  const [searchKeyword, setSearchKeyword] = useState<string>("");
+  const { setSearchResultList, questList } = props;
+
+  useEffect(() => {
+    setSearchResultList(questList);
+  }, [questList]);
 
   useEffect(() => {
     handleSearch();
@@ -55,7 +59,7 @@ const SearchInput = (props: Props) => {
     const keyword = searchKeyword.replace(/ /g, ""); // 검색한 키워드
     const searchCho = cho(keyword); // 검색한 키워드 초성으로 변환
 
-    QuestDummy.forEach((quest, i) => {
+    questList.forEach((quest, i) => {
       const compare = quest.name.replace(/ /g, ""); // 비교할 퀘스트 이름
       const compCho = cho(compare); // 비교문자의 초성
       const strIdx = []; // 비교문자열에서 검색어와 일치하는 부분의 시작 위치
