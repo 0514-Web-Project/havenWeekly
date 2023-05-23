@@ -1,4 +1,4 @@
-import { QuestDummy, QuestType } from "@/data/QuestDummy";
+import { QuestType } from "@/data/type";
 import MyListState from "@/recoil/MyListState";
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";

@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 import BodyContent from "@/layout/BodyContent";
