@@ -26,8 +26,8 @@
 ### Requirements
 For building and running the application you need:
 
-- [Node.js 19.3.0](https://nodejs.org/ca/blog/release/v19.3.0/)
-- [Npm 9.2.0](https://www.npmjs.com/package/npm/v/9.2.0)
+- Node.js 19.3.0
+- Yarn 1.22.19
 
 ### Installation
 ``` bash
@@ -60,7 +60,7 @@ For Mac :
 
 #### Frontend
 ```
-$ cd havenWeekly
+$ cd havenWeekly/front
 $ nvm use v.19.3.0
 $ yarn install 
 $ yarn dev:local // local development env
