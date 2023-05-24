@@ -87,11 +87,11 @@ class Quest(models.Model):
     name = models.CharField('퀘스트 이름', max_length=50)
     type = models.IntegerField('퀘스트 종류', choices=QuestType.choices, default=QuestType.SIMPLE)
     goal = models.TextField('퀘스트 목표')
-    quest_detail = models.ForeignKey(QuestDetail, on_delete=models.SET_NULL, null=True, related_name='quest')
+    quest_detail = models.ForeignKey(QuestDetail, on_delete=models.SET_NULL, null=True, related_name='quests')
     difficulty = models.IntegerField('난이도', choices=QuestDiff.choices)
     start_npc = models.ForeignKey(NPC, default=None, on_delete=models.SET_NULL, blank=True, null=True, related_name='quest_start')
     start_map = models.ForeignKey(Map, on_delete=models.SET_NULL, blank=True, null=True, related_name='quest_start')
-    process_map = models.ForeignKey(Map, on_delete=models.SET_NULL, null=True, related_name='quest_process')
+    recommended_map = models.ManyToManyField(Map, related_name='quests')
     finish_npc = models.ForeignKey(NPC, default=None, on_delete=models.SET_NULL, blank=True, null=True, related_name='quest_finish')
     finish_map = models.ForeignKey(Map, on_delete=models.SET_NULL, blank=True, null=True, related_name='quest_finish')
 
