@@ -47,7 +47,7 @@ class QuestSerializer(serializers.ModelSerializer):
     quest_detail = QuestDetailSerializer()
     start_npc = NPCSerializer()
     start_map = MapSerializer()
-    process_map = MapSerializer()
+    recommended_map = MapSerializer()
     finish_npc = NPCSerializer()
     finish_map = MapSerializer()
 
@@ -55,4 +55,4 @@ class QuestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quest
         fields = ('id', 'name', 'type', 'goal', 'quest_detail', 'difficulty',
-                  'start_npc', 'start_map', 'process_map', 'finish_npc', 'finish_map',)
+                  'start_npc', 'start_map', 'recommended_map', 'finish_npc', 'finish_map',)
