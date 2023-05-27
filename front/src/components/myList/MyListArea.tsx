@@ -31,8 +31,13 @@ export default function MyListArea({
 
   return (
     <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%] sm:w-full">
-      <div className="flex justify-between mb-[6px]">
+      <div className="flex justify-between mb-[10px]">
         <div className="gap-x-[8px] flex">
+          <span className="self-center">LV.</span>{" "}
+          <input
+            placeholder="200"
+            className="bg-[#555] text-right w-[70px] border-white border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px]"
+          />
           <button
             disabled={myQuestLength < 4}
             onClick={handleApply}
@@ -48,7 +53,9 @@ export default function MyListArea({
             RESET
           </button>
         </div>
-        <div className="text-[16px] p-[10px]">{myQuestLength}/4</div>
+        <div className="text-[16px] self-center px-[10px]">
+          {myQuestLength}/4
+        </div>
       </div>
       <MyList />
     </div>
