@@ -1,6 +1,14 @@
-import Header from "@/layout/Header";
-import Footer from "@/layout/Footer";
-import BodyContent from "@/layout/BodyContent";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("../layout/Header"), {
+  ssr: false,
+});
+const BodyContent = dynamic(() => import("../layout/BodyContent"), {
+  ssr: false,
+});
+const Footer = dynamic(() => import("../layout/Footer"), {
+  ssr: false,
+});
 
 const Home = () => {
   return (
