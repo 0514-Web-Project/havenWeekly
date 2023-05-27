@@ -9,7 +9,7 @@ const SearchList = ({
   searchResultList: QuestType[];
 }) => {
   return (
-    <div className="overflow-y-scroll h-[181px]">
+    <div className="overflow-y-scroll scrollbar-hide h-[181px]">
       {searchResultList.map((item: QuestType, index: number) => {
         return <SearchItem key={`${item.name}-${index}`} item={item} />;
       })}
