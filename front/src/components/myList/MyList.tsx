@@ -1,5 +1,5 @@
 import { QuestType } from "@/data/type";
-import MyListState from "@/recoil/MyListState";
+import MyListState from "@/recoil/MyList";
 import React from "react";
 import { useRecoilState } from "recoil";
 

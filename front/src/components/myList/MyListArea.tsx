@@ -1,4 +1,4 @@
-import MyListState from "@/recoil/MyListState";
+import MyListState from "@/recoil/MyList";
 import dynamic from "next/dynamic";
 import React, { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
