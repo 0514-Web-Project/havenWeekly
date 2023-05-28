@@ -1,19 +1,14 @@
 import { QuestType } from "@/data/type";
 import MyListState from "@/recoil/MyListState";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useRecoilState } from "recoil";
 
 export default function MyList() {
   const [myList] = useRecoilState(MyListState);
-  const [list, setList] = useState<QuestType[]>([]);
-
-  useEffect(() => {
-    setList(myList);
-  }, [myList]);
 
   return (
     <div className="overflow-y-scroll scrollbar-hide h-[181px]">
-      {list.map((item: QuestType, index: number) => {
+      {myList.map((item: QuestType, index: number) => {
         return <MyListItem item={item} key={index} index={index} />;
       })}
     </div>
