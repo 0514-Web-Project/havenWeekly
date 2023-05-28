@@ -1,8 +1,12 @@
+import MyLevelState from "@/recoil/MyLevel";
 import MyListState from "@/recoil/MyList";
 import dynamic from "next/dynamic";
 import React, { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 const MyList = dynamic(() => import("../myList/MyList"), {
+  ssr: false,
+});
+const LevelSelectBox = dynamic(() => import("../myList/LevelSelectBox"), {
   ssr: false,
 });
 
@@ -13,7 +17,7 @@ export default function MyListArea({
 }) {
   const [myList, setMyList] = useRecoilState(MyListState);
   const [myQuestLength, setMyQuestLength] = useState(0);
-  const [myLevel, setMyLevel] = useState<number>(0);
+  const [myLevel] = useRecoilState(MyLevelState);
 
   useEffect(() => {
     setMyQuestLength(myList.length);
@@ -38,18 +42,8 @@ export default function MyListArea({
       <div className="flex justify-between mb-[10px]">
         <div className="gap-x-[8px] flex">
           {/* <-- 레벨 입력 폼 */}
-          <span className="self-center">LV.</span>{" "}
-          <select
-            value={myLevel}
-            onChange={(e) => setMyLevel(Number(e.target.value))}
-            className="bg-[#555] w-[100px] border-white border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px]"
-          >
-            <option value={0}>레벨 선택</option>
-            <option value={200}>200~205</option>
-            <option value={206}>206~210</option>
-            <option value={211}>211~215</option>
-            <option value={216}>216 이상</option>
-          </select>
+          <span className="self-center">LV.</span>
+          <LevelSelectBox />
           {/* 레벨 입력 폼 --> */}
           {/* <-- APPLY 버튼 */}
           <button
