@@ -8,13 +8,13 @@ const Header = () => {
       {/* <-- 다크모드 스위치 */}
       <div className="cursor-pointer w-[42px] absolute left-[30px] top-[32px] sm:w-[32px] sm:top-[37px] mo:w-[25px] mo:top-[40px]">
         <div
-          className="w-[48px] h-[30px] flex items-center border border-solid border-white rounded-full p-1 cursor-pointer"
+          className="w-[50px] h-[32px] bg-[url(/images/switch_bg.svg)] flex items-center border border-solid border-white rounded-full p-1 cursor-pointer"
           onClick={() => setToggled((prev) => !prev)}
         >
           <div
             className={
               "bg-white h-[23px] w-[23px] rounded-full shadow-md transform duration-300 ease-in-out" +
-              (toggled ? null : " transform translate-x-[15px]")
+              (toggled ? null : " transform translate-x-[17px]")
             }
           ></div>
         </div>
