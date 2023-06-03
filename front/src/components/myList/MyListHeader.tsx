@@ -42,7 +42,7 @@ const MyListHeader = ({
         <button
           disabled={myQuestLength < 4 || myLevel === 0}
           onClick={handleApply}
-          className="disabled:border-[#ddd] disabled:bg-[#393f3d50] disabled:text-[#ffffff62] dark:hover:bg-[#81af9e50] border-[#81AF9E] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px] bg-[#81AF9E] hover:bg-[#709789] dark:bg-transparent text-white"
+          className="disabled:border-[#ddd] disabled:bg-[#393f3d50] dark:disabled:bg-[#393f3d50] disabled:text-[#ffffff62] dark:hover:bg-[#81af9e50] border-[#81AF9E] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px] bg-[#81AF9E] hover:bg-[#709789] dark:bg-transparent text-white"
         >
           APPLY
         </button>
@@ -54,7 +54,7 @@ const MyListHeader = ({
             setMyList([]);
             setMyLevel(0);
           }}
-          className="disabled:border-[#ddd] disabled:bg-[#393f3d50] disabled:text-[#ffffff62] dark:hover:bg-[#FFB2B250] border-[#FFB2B2] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px] bg-[#FFB2B2] hover:bg-[#FFB2B2] dark:bg-transparent text-white"
+          className="disabled:border-[#ddd] disabled:bg-[#393f3d50] dark:disabled:bg-[#393f3d50] disabled:text-[#ffffff62] dark:hover:bg-[#FFB2B250] border-[#FFB2B2] border border-solid text-[14px] p-[7px_10px] h-fit rounded-[10px] bg-[#FFB2B2] hover:bg-[#FFB2B2] dark:bg-transparent text-white"
         >
           RESET
         </button>
