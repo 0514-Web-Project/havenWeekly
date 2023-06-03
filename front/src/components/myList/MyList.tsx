@@ -1,7 +1,8 @@
 import { QuestType } from "@/data/type";
+import ModeState from "@/recoil/Mode";
 import MyListState from "@/recoil/MyList";
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 export default function MyList() {
   const [myList] = useRecoilState(MyListState);
@@ -18,9 +19,10 @@ export default function MyList() {
 const MyListItem = ({ item, index }: { item: QuestType; index: number }) => {
   const { name, difficulty } = item;
   const [myList, setMyList] = useRecoilState(MyListState);
+  const mode = useRecoilValue(ModeState);
 
   return (
-    <div className="flex justify-between px-[12px] py-[16px] text-[13px] border border-solid border-[#fff rounded-[12px] mb-[8px]">
+    <div className="flex justify-between px-[12px] py-[16px] text-[13px] border border-solid border-light dark:border-dark rounded-[12px] mb-[8px] shadow-light_s">
       <div className="whitespace-nowrap text-ellipsis overflow-hidden">{`${
         index + 1
       }. ${name}`}</div>
@@ -42,7 +44,7 @@ const MyListItem = ({ item, index }: { item: QuestType; index: number }) => {
         >
           <img
             className="mx-[10px]"
-            src="/images/icon_cancel.svg"
+            src={`/images/icon_cancel${mode ? "_black" : ""}.svg`}
             alt="cancel"
           />
         </button>

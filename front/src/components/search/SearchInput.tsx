@@ -1,5 +1,7 @@
 import { QuestType } from "@/data/type";
+import ModeState from "@/recoil/Mode";
 import React, { useCallback, useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
 
 type Props = {
   questList: QuestType[];
@@ -9,6 +11,7 @@ type Props = {
 const SearchInput = (props: Props) => {
   const [searchKeyword, setSearchKeyword] = useState<string>("");
   const { setSearchResultList, questList } = props;
+  const mode = useRecoilValue(ModeState);
 
   useEffect(() => {
     setSearchResultList(questList);
@@ -91,15 +94,15 @@ const SearchInput = (props: Props) => {
   }, [searchKeyword]);
 
   return (
-    <div className="gap-x-[10px] mb-[6px] flex rounded-[15px] h-[40px] border border-solid border-[#fff] p-[11px_12px]">
+    <div className="gap-x-[10px] mb-[6px] flex rounded-[15px] h-[40px] border border-solid dark:border-dark border-light p-[11px_12px]">
       <img
-        src="/images/icon_magnifier.svg"
+        src={`/images/icon_magnifier${mode ? "_light" : ""}.svg`}
         alt="magnifier"
         className="w-[18px] h-[19px]"
       />
       <input
         id="search_input"
-        placeholder="퀘스트 검색 (ex. 적로봇처치, ㅈㄹㅂㅊㅊ)"
+        placeholder="퀘스트 검색 (ex. 건물수리, ㄱㅁㅅㄹ)"
         className="bg-transparent focus:outline-0 w-full"
         value={searchKeyword}
         onChange={(e) => {
@@ -117,7 +120,7 @@ const SearchInput = (props: Props) => {
         >
           <img
             className="h-[16px]"
-            src="/images/icon_cancel.svg"
+            src={`/images/icon_cancel${mode ? "_black" : ""}.svg`}
             alt="search_cancel"
           />
         </div>

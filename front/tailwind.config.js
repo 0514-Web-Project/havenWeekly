@@ -13,7 +13,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      backgroundColor: { dark: "#555" },
+      borderColor: { dark: "#fff", light: "#aeaeae" },
+      backgroundColor: { dark: "#3d3d3d", light: "#e6e6e6" },
+      boxShadow: {
+        light: "2px 3px 4px rgba(0, 0, 0, 0.15)",
+        light_s: "1px 2px 1px rgba(0, 0, 0, 0.10)",
+      },
     },
     screens: {
       "2xl": { max: "1535px" },
@@ -36,4 +41,5 @@ module.exports = {
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
+  darkMode: "class",
 };

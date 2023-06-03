@@ -9,6 +9,10 @@ const { persistAtom } = recoilPersist({
   storage: localStorage,
 });
 
+/**
+ * true > light mode
+ * false > dark mode
+ */
 const ModeState = atom<boolean>({
   key: "ModeState",
   default: false,

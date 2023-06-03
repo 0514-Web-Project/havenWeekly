@@ -1,8 +1,12 @@
 import useQuestData from "@/data/quest/useQuestData";
 import { QuestType } from "@/data/type";
 import React, { useEffect, useState } from "react";
-import SearchInput from "./SearchInput";
 import SearchList from "./SearchList";
+import dynamic from "next/dynamic";
+
+const SearchInput = dynamic(() => import("../search/SearchInput"), {
+  ssr: false,
+});
 
 const SearchArea = () => {
   const [questOriginList, setQuestOriginList] = useState<QuestType[]>([]);
@@ -22,7 +26,7 @@ const SearchArea = () => {
   }, []);
 
   return (
-    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%] sm:w-full">
+    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%] sm:w-full bg-white dark:bg-transparent shadow-light">
       <SearchInput
         questList={questOriginList}
         setSearchResultList={setSearchResultList}

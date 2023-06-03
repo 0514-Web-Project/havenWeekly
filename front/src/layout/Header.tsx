@@ -7,9 +7,13 @@ const DarkModeSwitch = dynamic(
   }
 );
 
+const MenuButton = dynamic(() => import("../components/_common/MenuButton"), {
+  ssr: false,
+});
+
 const Header = () => {
   return (
-    <div className="relative mt-[20px] bg-dark h-[96px] rounded-[18px] text-center leading-[96px] cs:rounded-[0px]">
+    <div className="relative mt-[20px] dark:bg-dark bg-light h-[96px] rounded-[18px] text-center leading-[96px] cs:rounded-[0px]">
       {/* <-- 다크모드 스위치 */}
       <DarkModeSwitch />
       {/* 다크모드 스위치 --> */}
@@ -19,9 +23,7 @@ const Header = () => {
       </div>
       {/* 타이틀 --> */}
       {/* <-- 햄버거 버튼 */}
-      <div className="cursor-pointer w-[42px] absolute right-[30px] top-[32px] sm:w-[32px] sm:top-[37px] mo:w-[25px] mo:top-[40px]">
-        <img src="/images/icon_menu.svg" alt="menu" />
-      </div>
+      <MenuButton />
       {/* 햄버거 버튼 --> */}
     </div>
   );

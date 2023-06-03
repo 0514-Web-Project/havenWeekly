@@ -14,7 +14,7 @@ const MyListArea = ({
   setAnalytics: React.Dispatch<React.SetStateAction<string | null>>;
 }) => {
   return (
-    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%] sm:w-full">
+    <div className="border border-solid border-[#fff] rounded-[12px] p-[14px_12px] h-[259px] w-[48%] sm:w-full bg-white dark:bg-transparent shadow-light">
       <MyListHeader setAnalytics={setAnalytics} />
       <MyList />
     </div>

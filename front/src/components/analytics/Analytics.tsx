@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Analytics({ analytics }: { analytics: string | null }) {
   return (
-    <div className="border border-solid border-[#fff] rounded-[12px] p-[18px_22px] mt-[14px]">
+    <div className="border border-solid border-[#fff] bg-white dark:bg-transparent rounded-[12px] p-[18px_22px] mt-[14px] shadow-light">
       <div>분석</div>
       <div className="text-[13px] my-[5px]">
         {!analytics ? (
