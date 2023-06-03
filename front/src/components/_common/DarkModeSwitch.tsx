@@ -20,7 +20,7 @@ const DarkModeSwitch = () => {
 
   return (
     <div>
-      <div className="cursor-pointer w-[42px] absolute left-[30px] top-[32px] sm:w-[32px] sm:top-[37px] mo:w-[25px] mo:top-[40px]">
+      <div className="cursor-pointer w-[42px] sm:w-[32px] mo:w-[25px]">
         <div
           className="w-[50px] h-[32px] bg-[url(/images/switch_bg.svg)] flex items-center border border-solid dark:border-white border-[#fff] rounded-full p-1 cursor-pointer"
           onClick={() => setModeState((prev) => !prev)}

@@ -13,7 +13,7 @@ const MenuButton = dynamic(() => import("../components/_common/MenuButton"), {
 
 const Header = () => {
   return (
-    <div className="relative mt-[20px] dark:bg-dark bg-light h-[96px] rounded-[18px] text-center leading-[96px] cs:rounded-[0px]">
+    <div className="flex px-[48px] items-center justify-between mt-[20px] dark:bg-dark bg-light h-[96px] rounded-[18px] text-center leading-[96px] cs:rounded-[0px]">
       {/* <-- 다크모드 스위치 */}
       <DarkModeSwitch />
       {/* 다크모드 스위치 --> */}
