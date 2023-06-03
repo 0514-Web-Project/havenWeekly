@@ -5,6 +5,7 @@
 html {
   background: #fff;
   color: #333;
+  transition-duration: 300ms;
 }
 
 html.dark {

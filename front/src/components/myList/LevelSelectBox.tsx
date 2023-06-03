@@ -75,7 +75,7 @@ const LevelSelectItem = ({ item, index }: any) => {
   return (
     <li
       className={cn(
-        "dark:hover:bg-[#ffffff1f] hover:bg-[#00000010] duration-300 p-[5px_10px] text-[12px]",
+        "dark:hover:bg-[#ffffff1f] hover:bg-[#00000010] p-[5px_10px] text-[12px]",
         {
           ["p-[10px_10px_5px_10px] rounded-t-[10px]"]: index === 0,
           ["p-[5px_10px_10px_10px] rounded-b-[10px]"]: index === 3,

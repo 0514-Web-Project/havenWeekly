@@ -40,7 +40,7 @@ const SearchItem = ({ item }: { item: QuestType }) => {
   return (
     <div
       onClick={clickSearchItem}
-      className="hover:bg-[#ffffff10] duration-300 flex cursor-pointer justify-between px-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff"
+      className="dark:hover:bg-[#ffffff10] hover:bg-[#00000010] flex cursor-pointer justify-between px-[12px] py-[16px] text-[13px] border-b-[1px] border-solid border-[#fff"
     >
       <div className="overflow-hidden text-ellipsis whitespace-nowrap">
         {name}{" "}

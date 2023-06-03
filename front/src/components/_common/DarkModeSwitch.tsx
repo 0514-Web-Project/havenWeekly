@@ -27,7 +27,7 @@ const DarkModeSwitch = () => {
         >
           <div
             className={
-              "bg-white h-[23px] w-[23px] rounded-full shadow-md transform duration-300 ease-in-out" +
+              "bg-white h-[23px] w-[23px] rounded-full shadow-md transform ease-in-out" +
               (modeState ? null : " transform translate-x-[17px]")
             }
           ></div>
