@@ -47,7 +47,7 @@ class QuestSerializer(serializers.ModelSerializer):
     quest_detail = QuestDetailSerializer()
     start_npc = NPCSerializer()
     start_map = MapSerializer()
-    recommended_map = MapSerializer()
+    recommended_map = MapSerializer(many=True)
     finish_npc = NPCSerializer()
     finish_map = MapSerializer()
 
