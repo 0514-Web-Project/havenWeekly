@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import MapViewSet, MonsterViewSet, NPCViewSet, ItemViewSet, QuestViewSet, QuestDetailViewSet
+from .views import MapViewSet, MonsterViewSet, NPCViewSet, ItemViewSet, QuestViewSet, QuestDetailViewSet, process_selected_quests
 
 from . import views
 
@@ -15,7 +15,6 @@ router.register('quest', QuestViewSet)
 router.register('quest_detail', QuestDetailViewSet)
 
 map_list = MapViewSet.as_view({
-    'post': 'create',
     'get': 'list'
 })
 
@@ -41,4 +40,5 @@ urlpatterns = [
     path('quest/<int:pk>/', map_detail, name='map_detail'),
     path('quest_detail/', map_list, name='map_list'),
     path('quest_detail/<int:pk>/', map_detail, name='map_detail'),
+    path('process_quests/', process_selected_quests, name='process_quests')
 ]

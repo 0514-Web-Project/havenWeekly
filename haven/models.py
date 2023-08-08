@@ -15,10 +15,24 @@ class Monster(models.Model):
     def __str__(self):
         return self.name
 
+class Coordinate(models.Model):
+    x = models.IntegerField('x 좌표')
+    y = models.IntegerField('y 좌표')
+    size = models.IntegerField('원 크기')
+
+    class Meta:
+        verbose_name = '좌표'
+        verbose_name_plural = '좌표'
+        ordering = ['id']
+
+    def __str__(self):
+        return f"{self.x}, {self.y}, {self.size}"
+
 
 class Map(models.Model):
     name = models.CharField('맵 이름', max_length=50)
     monsters = models.ManyToManyField('Monster', blank=True, related_name='maps')
+    coordinates = models.ForeignKey(Coordinate, on_delete=models.SET_NULL, blank=True, null=True, related_name='maps')
 
     class Meta:
         verbose_name = '맵'
