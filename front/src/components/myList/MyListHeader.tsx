@@ -3,6 +3,7 @@ import LevelSelectBox from "./LevelSelectBox";
 import React, { useCallback, useEffect, useState } from "react";
 import MyLevelState from "@/recoil/MyLevel";
 import MyListState from "@/recoil/MyList";
+import axios from 'axios';
 
 const MyListHeader = ({
   setAnalytics,
@@ -19,6 +20,14 @@ const MyListHeader = ({
   }, [myList]);
 
   const handleApply = useCallback(() => {
+    axios.post(process.env.NEXT_PUBLIC_API_URL + "haven/process_quests/", {quests: myList})
+        .then(response => {
+          console.log(response);
+
+        })
+        .catch(error => {
+
+        })
     setAnalytics(
       `- 난이도 : 평균 ${
         myList
