@@ -5,6 +5,7 @@ from rest_framework import viewsets, permissions
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.core import serializers
 import json
 
 
@@ -13,11 +14,13 @@ def process_selected_quests(request):
     selected_quests = request.data.get('quests')
     quest_obj = []
     for quest in selected_quests:
-        quest_obj.append(Quest.objects.get(name=quest['name']))
-    for quest in quest_obj:
-        print(quest.name)
-        for i in quest.recommended_map.all():
-            print(i.id)
+        tmp = Quest.objects.get(name=quest['name'])
+        for i in tmp.recommended_map.all():
+            print(i)
+    # for quest in quest_obj:
+    #     print(quest.name)
+    #     for i in quest.recommended_map.all():
+    #         print(i.id)
 
     return Response({'message': selected_quests})
 
