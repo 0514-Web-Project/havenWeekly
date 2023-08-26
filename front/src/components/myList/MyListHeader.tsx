@@ -3,6 +3,7 @@ import LevelSelectBox from "./LevelSelectBox";
 import React, { useCallback, useEffect, useState } from "react";
 import MyLevelState from "@/recoil/MyLevel";
 import MyListState from "@/recoil/MyList";
+import _ from "lodash";
 
 const MyListHeader = ({
   setAnalytics,
@@ -19,6 +20,11 @@ const MyListHeader = ({
   }, [myList]);
 
   const handleApply = useCallback(() => {
+    /**
+     * TODO
+     */
+    console.log(myList, myLevel);
+    _.map(myList, (item, index) => {});
     setAnalytics(
       `- 난이도 : 평균 ${
         myList
@@ -29,7 +35,7 @@ const MyListHeader = ({
           ) / 4
       }`
     );
-  }, [myList]);
+  }, [myList, myLevel]);
 
   return (
     <div className="flex justify-between mb-[10px]">

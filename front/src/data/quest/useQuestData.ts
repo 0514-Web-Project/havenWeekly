@@ -7,7 +7,11 @@ const useQuestData = () => {
     const result: QuestType[] = [];
 
     data.map((d: any) => {
-      result.push({ name: d.name ?? "", difficulty: d.difficulty ?? 1 });
+      result.push({
+        id: d.id,
+        name: d.name ?? "",
+        difficulty: d.difficulty ?? 1,
+      });
     });
 
     return result;

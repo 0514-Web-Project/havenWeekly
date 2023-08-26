@@ -1,4 +1,5 @@
 export interface QuestType {
+  id: number;
   name: string;
   difficulty: number;
 }

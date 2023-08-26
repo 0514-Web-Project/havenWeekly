@@ -20,7 +20,7 @@ const SearchList = ({
 export default SearchList;
 
 const SearchItem = ({ item }: { item: QuestType }) => {
-  const { name, difficulty } = item;
+  const { id, name, difficulty } = item;
   const [myList, setMyList] = useRecoilState(MyListState);
   const [isAlreadyAdd, setIsAlreadyAdd] = useState(false);
 
@@ -34,7 +34,7 @@ const SearchItem = ({ item }: { item: QuestType }) => {
 
   const clickSearchItem = () => {
     if (isAlreadyAdd || myList.length === 4) return;
-    setMyList(myList.concat({ name, difficulty }));
+    setMyList(myList.concat({ id, name, difficulty }));
   };
 
   return (

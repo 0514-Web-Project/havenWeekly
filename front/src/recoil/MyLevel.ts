@@ -1,4 +1,3 @@
-import { QuestType } from "@/data/type";
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
